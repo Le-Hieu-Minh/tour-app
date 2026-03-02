@@ -1,0 +1,388 @@
+/* --- Thiết lập chung cho Header --- */
+.header {
+  /* Đặt nền trắng cho header và bóng nhẹ để nổi bật */
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* Bóng đổ mềm */
+  padding: 15px 0;
+  /* Khoảng đệm trên dưới */
+  position: sticky;
+  /* Giữ header trên cùng khi cuộn */
+  top: 0;
+  z-index: 1000;
+  /* Đảm bảo header nằm trên các nội dung khác */
+}
+
+/* --- Container và Row (Giả định sử dụng Bootstrap Grid) --- */
+.container {
+  /* Thiết lập cho container nếu cần tùy chỉnh (nếu bạn dùng framework như Bootstrap, thường không cần) */
+  width: 100%;
+  max-width: 1200px;
+  /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto;
+  /* Căn giữa container */
+  padding: 0 15px;
+  /* Khoảng đệm hai bên */
+}
+
+.row {
+  /* Sử dụng Flexbox cho .row để quản lý căn chỉnh */
+  display: flex;
+  /* align-items-center đã có, nhưng thêm lại để đảm bảo */
+  align-items: center;
+  justify-content: space-between;
+  /* Đẩy logo và menu ra hai bên */
+}
+
+/* --- Cột Logo (Col-3) --- */
+.col-3 {
+  /* Chỉ định chiều rộng nếu không dùng hệ thống grid */
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.inner-logo img {
+  /* Tùy chỉnh kích thước logo */
+  max-height: 50px;
+  max-width: 100%;
+  /* Chiều cao cố định */
+  width: auto;
+  display: block;
+  /* Loại bỏ khoảng trắng dưới ảnh */
+}
+
+/* --- Cột Menu (Col-9) --- */
+.col-9 {
+  /* Chỉ định chiều rộng nếu không dùng hệ thống grid */
+  flex-basis: 75%;
+  max-width: 75%;
+  text-align: right;
+  /* Đẩy menu sang phải */
+}
+
+/* --- Menu Điều Hướng --- */
+.inner-menu ul {
+  /* Xóa style mặc định của ul */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* Sử dụng Flexbox để bố cục các mục menu theo hàng ngang */
+  display: flex;
+  justify-content: flex-end;
+  /* Căn các mục sang phải */
+}
+
+.inner-menu ul li {
+  /* Khoảng cách giữa các mục menu */
+  margin-left: 30px;
+}
+
+.inner-menu ul li a {
+  /* Style cho liên kết */
+  text-decoration: none;
+  /* Xóa gạch chân */
+  color: #333333;
+  /* Màu chữ tối */
+  font-size: 16px;
+  font-weight: 500;
+  /* Độ đậm vừa phải */
+  padding: 5px 0;
+  /* Khoảng đệm cho hiệu ứng hover */
+  display: inline-block;
+
+  /* Hiệu ứng chuyển tiếp mượt mà cho màu và gạch dưới */
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* --- Hiệu ứng Hover (Làm đẹp thêm) --- */
+.inner-menu ul li a:hover {
+  color: #007bff;
+  /* Thay đổi màu chữ khi di chuột */
+  transform: translateY(-2px);
+  /* Nhấc nhẹ chữ lên */
+}
+
+/* Thêm hiệu ứng gạch chân đẹp khi hover */
+.inner-menu ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  /* Độ dày của gạch chân */
+  background-color: #007bff;
+  /* Màu gạch chân */
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+  /* Hiệu ứng kéo dài mượt mà */
+}
+
+.inner-menu ul li a:hover::after {
+  width: 100%;
+  /* Gạch chân hiển thị toàn bộ chiều rộng khi hover */
+}
+
+/*end header  */
+
+
+/* --- Thiết lập chung cho Footer ---  */
+.footer {
+  /* Màu nền tối và chữ sáng để dễ đọc */
+  background-color: #333333;
+  color: #f8f8f8;
+
+  /* Căn giữa chữ */
+  text-align: center;
+
+  /* Khoảng đệm trên dưới */
+  padding: 15px 0;
+
+  /* Đảm bảo footer luôn ở cuối trang */
+  width: 100%;
+  /* Thêm các thuộc tính position: fixed/absolute nếu bạn muốn nó luôn hiển thị trên màn hình */
+  /* position: absolute; */
+  /* bottom: 0; */
+
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+/* end footer */
+
+/* box-head */
+
+.box-head {
+  /* Khoảng đệm dưới để tạo khoảng cách với nội dung bên dưới */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  /* Khoảng cách với phần nội dung chính */
+
+  /* Đường viền dưới để phân tách rõ ràng */
+  border-bottom: 2px solid #eeeeee;
+
+  display: flex;
+  /* Dùng flexbox nếu bạn muốn căn chỉnh thêm các thành phần khác */
+  align-items: center;
+}
+
+/* --- Style cho Tiêu đề (Heading) --- */
+.box-head .inner-title {
+  color: #333333;
+  /* Màu chữ tối, dễ đọc */
+  font-size: 24px;
+  /* Kích thước tiêu đề lớn hơn */
+  font-weight: 600;
+  /* Độ đậm vừa phải, nổi bật */
+  margin: 0;
+  /* Xóa margin mặc định của thẻ h2 */
+  padding: 0;
+
+  /* Thêm một đường viền dưới nhỏ màu sắc để làm điểm nhấn */
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/*end box-head */
+
+
+/* --- Khung chung cho trang chi tiết tour --- */
+.tour-detail {
+  padding: 40px 0;
+  background-color: #fff;
+}
+
+/* --- Xử lý hình ảnh với Swiper --- */
+.inner-images {
+  margin-bottom: 30px;
+}
+
+/* Slider chính (To bên trên) */
+.mySwiper2 {
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mySwiper2 .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slider Thumbnails (Nhỏ bên dưới) */
+.mySwiper {
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+  border: 2px solid #28a745;
+  /* Màu xanh lá cây của Bootstrap success */
+}
+
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Thông tin tour (Cột phải) --- */
+.inner-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.inner-barcode,
+.inner-time-start,
+.inner-stock {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.inner-barcode i,
+.inner-time-start i,
+.inner-stock i {
+  color: #28a745;
+  width: 25px;
+}
+
+/* --- Phần Giá Tiền --- */
+.inner-price-special {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ee4d2d;
+  /* Màu cam nổi bật kiểu Shopee */
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.inner-price {
+  font-size: 18px;
+  color: #999;
+  text-decoration: line-through;
+  /* Gạch ngang giá cũ */
+  display: inline-block;
+}
+
+.inner-percent {
+  display: inline-block;
+  background-color: #ee4d2d;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* --- Form giỏ hàng --- */
+form[form-add-to-cart] {
+  margin-top: 25px;
+  max-width: 300px;
+}
+
+form[form-add-to-cart] .form-control {
+  height: 45px;
+  font-weight: 600;
+  border: 1px solid #ddd;
+}
+
+form[form-add-to-cart] .btn-success {
+  height: 45px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Thông tin và Lịch trình (Dưới Slider) --- */
+.inner-information {
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.inner-label {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #28a745;
+  display: inline-block;
+}
+
+.inner-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Xử lý hình ảnh hoặc bảng bên trong mô tả tour (thường từ TinyMCE) */
+.inner-text img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+
+/* Show Alert */
+[show-alert] {
+  position: fixed;
+  top: 70px;
+  right: 15px;
+  z-index: 9999;
+}
+
+[show-alert].alert-hidden {
+  animation-name: alert-hidden;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes alert-hidden {
+  from {
+    right: 15px;
+  }
+
+  to {
+    right: -100%;
+    display: none;
+  }
+}
+
+[show-alert] [close-alert] {
+  background: #ffffffcc;
+  /* nền trắng hơi trong suốt */
+  display: inline-block;
+  /* hiển thị dạng khối nội tuyến */
+  width: 24px;
+  /* chiều rộng */
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 50%;
+  cursor: pointer;
+}
